@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2</title>
+    <style>
+        h1
+        {
+            font-size: 400%;
+            text-align: center;
+        }
+
+img
+{
+    background-color: rgb(0, 0, 0);
+    padding: 2%;
+    border-radius: 10px;
+}
+
+div
+{
+    text-align: center;
+    margin: auto;
+}
+
+button
+{
+    padding: 1%;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <h1>Trocar Imagem</h1>
+    <div>
+    <img id="imagem" src="Telefone.png" width="350" height="250" alt="BannerTelefone"> <br>
+    </div>
+    <div>
+    <button onclick="trocar();"> Clique aqui para trocar Imagem</button>
+</div>
+
+    <script>
+        let modo = 0;
+        function trocar()
+        {
+        if(modo==0){
+        document.getElementById("imagem").src = "GhostFace1.jpg";
+        modo=1;
+        }
+        else{
+            document.getElementById("imagem").src = "Telefone.png";
+            modo=0;
+        }
+
+
+        }
+    </script>
+</body>
+</html>

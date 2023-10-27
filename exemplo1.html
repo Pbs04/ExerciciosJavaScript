@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 1</title>
+    <style>
+    input
+    {
+    padding: 0.5%; 
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 70%;
+    }
+
+    label
+    {
+    font-size: 120%;
+    }
+
+    .div1
+    {
+    background-color: burlywood; 
+    border: 2px solid black; 
+    padding: 1%; 
+    border-radius: 20px;
+    box-shadow: 5px 5px black;
+    color: black;
+    }
+
+.original
+{
+padding: 1%;
+border: 1px solid black;
+border-radius: 20px;
+width: 10%;
+}
+
+.original:hover
+{
+background-color: rgba(255, 255, 255, 0.423);   
+}
+
+.mudar
+{
+padding: 1%; 
+width: 10%;
+background-color: rgb(25, 0, 255);
+color: rgb(255, 255, 255);
+border-radius: 20px;
+}
+
+.mudar:hover
+{
+background-color: rgba(25, 0, 255, 0.146);   
+}
+
+.result
+{
+border: 2px solid black;
+width: 30%;
+padding: 1%;
+border-radius: 10px;
+  
+}
+
+h2
+{
+    font-size: 180%;
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h2> Calculando a média</h2>
+        <label for="nota1">Nota 1:</label>
+        <input id="nota1" type="text"> <br><br>
+        <label for="nota2 "> Nota 2:</label>
+        <input id="nota2" type="text"> <br> <br>
+    
+        <button class="original" onclick="calcular();">Calcular</button>
+        <button class="original" onclick="limpar();">limpar</button>
+        <button class="mudar" onclick="mlayout()">Mudar Layout</button>
+<br>
+        <h3 class="result">Resultado:</h3>
+    </div>
+
+    
+
+<script>
+let modo = 0;
+
+function limpar()
+{
+const caixa = document.getElementsByTagName("input");
+caixa[0].value = "";
+caixa[1].value = "";  
+document.getElementsByClassName("result")[0].innerHTML = "Resultado: " 
+}
+
+function calcular()
+{
+const n1 = parseFloat(document.getElementById("nota1").value);  
+const n2 = parseFloat(document.getElementById("nota2").value);
+let media = (n1+n2)/2;
+//console.log(media);
+
+const resultado = document.getElementsByClassName("result");
+resultado[0].innerHTML = "Resultado: " + media;
+}
+
+function mlayout()
+{
+const minhaDiv = document.getElementsByTagName("div")[0].style;
+const meuBotao = document.getElementsByClassName("mudar")[0].style;
+
+
+if(modo==0)
+{
+    minhaDiv.backgroundColor = "blue";
+    minhaDiv.color = "white";
+    meuBotao.backgroundColor= "burlywood";
+    modo = 1;
+}
+else
+{
+    minhaDiv.backgroundColor= "burlywood";  
+    minhaDiv.color = "black";
+    meuBotao.backgroundColor= "blue";
+    modo = 0;
+}
+}
+
+
+</script>
+
+</body>
+</html>
