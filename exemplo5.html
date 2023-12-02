@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo-5</title>
+</head>
+<body>
+    <h2>Exemplo-5</h2>
+    <label for="caixa" style="font-size: 130%;">Adicionar botão</label>
+    <input id="caixa" type="checkbox" onclick="adicionar();">
+    <br>
+    <button style="font-size: 20px; display: none;">Clique aqui</button>
+    <script>
+        function adicionar(){
+            const marcado = document.getElementById("caixa").checked;
+            console.log(marcado);
+            const botao = document.getElementsByTagName("button")[0];
+            botao.addEventListener("click", function(){
+                const divi = document.createElement("div");
+                const imagem = document.createElement("img");
+                imagem.src = "alanzoka.png";
+                divi.appendChild(imagem);
+                document.body.appendChild(divi);
+                const im = document.
+                getElementsByTagName("img")[0];
+                im.addEventListener("click", function () {
+                   
+                  divi.removeChild(im);
+                });
+
+               
+            });
+            if(marcado)
+                document.getElementsByTagName("button")[0].style.display = "inline";
+            else
+            document.getElementsByTagName("button")[0].style.display = "none";
+        }
+       
+       
+
+    </script>
+</body>
+</html>
